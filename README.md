@@ -4,4 +4,4 @@
 
 -------------
 
-Note: Do not use this for completion the samme course in any way. 
+Note: Do not use this for completing the same course in any way. 
