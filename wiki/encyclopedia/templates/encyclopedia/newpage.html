@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+    {% if Flag %}
+        <h1> Error : SV009 - Entry With the same name exist. </h1>
+        <h6><a href="/wiki/{{ entry }}/editpage">Edit</a> : {{entry}}</h6>
+    {% elif edit %}
+        <h1> Edit Page : {{ entry }}</h1>
+    {% else %}
+        <h2> Make a new entry in Domain</h2>
+    {% endif %}
+    <div class="form-group">
+        <form action="{% url 'wiki:newpage' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary" style="margin-top :10px ">
+        </form>
+    </div>
+{% endblock %}
